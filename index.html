@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Johnson Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font-awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-5 text-center">
+        <h1 class="text-3xl font-bold">Gabriel Johnson</h1>
+        <button id="theme-toggle" class="mt-4 px-4 py-2 bg-white text-blue-600 font-semibold rounded shadow-md hover:bg-blue-100">
+            Switch Theme
+        </button>
+    </header>
+
+    <nav class="bg-white shadow-md">
+        <ul class="flex justify-center space-x-4 py-4">
+            <li><a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a></li>
+            <li><a href="#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a></li>
+            <li><a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a></li>
+            <li><a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="p-8 lg:flex lg:items-center lg:space-x-8">
+        <img src="your-image.jpg" alt="Your Image" class="w-40 h-40 rounded-full shadow-lg mx-auto lg:mx-0">
+        <div class="lg:w-2/3 mt-6 lg:mt-0 text-center lg:text-left">
+            <h2 class="text-2xl font-bold mb-4">About Me</h2>
+            <p class="text-gray-600">Hi there! I'm Gabriel Johnson, a dedicated software engineer with a 
+                passion for developing creative technology solutions.
+                I specialize in front-end development and have a strong appreciation for design, 
+                aiming to create applications that are both functional and visually appealing. 
+                I thrive on teamwork and enjoy tackling challenging problems, 
+                always eager to expand my knowledge and adapt to the dynamic world of technology.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="p-8 bg-gray-100">
+        <h2 class="text-center text-2xl font-bold mb-6">Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="fancy-border">
+                <div class="fancy-border-inner text-center">
+                    <span class="block text-lg font-semibold">HTML</span>
+                    <div class="progress-bar bg-gray-300 rounded-full mt-2 h-2">
+                        <div class="progress bg-blue-600 rounded-full h-2" style="width: 90%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fancy-border">
+                <div class="fancy-border-inner text-center">
+                    <span class="block text-lg font-semibold">CSS</span>
+                    <div class="progress-bar bg-gray-300 rounded-full mt-2 h-2">
+                        <div class="progress bg-blue-600 rounded-full h-2" style="width: 85%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fancy-border">
+                <div class="fancy-border-inner text-center">
+                    <span class="block text-lg font-semibold">JavaScript</span>
+                    <div class="progress-bar bg-gray-300 rounded-full mt-2 h-2">
+                        <div class="progress bg-blue-600 rounded-full h-2" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fancy-border">
+                <div class="fancy-border-inner text-center">
+                    <span class="block text-lg font-semibold">React</span>
+                    <div class="progress-bar bg-gray-300 rounded-full mt-2 h-2">
+                        <div class="progress bg-blue-600 rounded-full h-2" style="width: 70%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="p-8">
+        <h2 class="text-center text-2xl font-bold mb-6">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="fancy-border">
+                <div class="fancy-border-inner">
+                    <img src="gabbytraveltips.png" alt="Gabby Travel Tips" class="w-full h-40 object-cover rounded">
+                    <h3 class="text-xl font-bold mt-4">Gabby Travel Tips</h3>
+                    <p class="text-gray-600 mt-2">Gabby Travel Tips is your go-to resource for all things related to studying, visiting, and immigrating abroad. 
+                        Designed to simplify complex travel processes, this website provides clear, actionable tips, FAQs, and personalized consultation options 
+                        for prospective international students and visitors.</p>
+                    <a href="https://gabbytraveltips.netlify.app/" class="block mt-4 text-blue-600 hover:underline" target="_blank">Check Project</a>
+                </div>
+            </div>
+            <div class="fancy-border">
+                <div class="fancy-border-inner">
+                    <img src="hero cake.jpg" alt="Ojamcy Cakes" class="w-full h-40 object-cover rounded">
+                    <h3 class="text-xl font-bold mt-4">Ojamcy Cakes</h3>
+                    <p class="text-gray-600 mt-2">Ojamcy Cakes specializes in creating delicious and unique cakes for every occasion. Whether it's a birthday, 
+                        wedding, or corporate event, we provide custom cakes that are both beautiful and tasty.</p>
+                    <a href="https://ojamcycakes.netlify.app/" class="block mt-4 text-blue-600 hover:underline" target="_blank">Check Project</a>
+                </div>
+            </div>
+            <div class="fancy-border">
+                <div class="fancy-border-inner">
+                    <img src="study-tracker.jpg" alt="Study Tracker" class="w-full h-40 object-cover rounded">
+                    <h3 class="text-xl font-bold mt-4">Study Tracker</h3>
+                    <p class="text-gray-600 mt-2">Study Tracker helps students keep track of their assignments deadlines, and study hours. Designed to improve time management,
+                         this tool aims to increase productivity and keep students on top of their academic work.</p>
+                    <a href="https://codewithgabby.github.io/STUDY-GROUP-TRACKER/" class="block mt-4 text-blue-600 hover:underline" target="_blank">Check Project</a>
+                </div>
+            </div>
+            <div class="fancy-border">
+                <div class="fancy-border-inner">
+                    <img src="photo_2025-01-11_13-01-49.jpg" alt="CodeWithGabby" class="w-full h-40 object-cover rounded">
+                    <h3 class="text-xl font-bold mt-4">CodeWithGabby</h3>
+                    <p class="text-gray-600 mt-2">CodeWithGabby is a platform designed to help beginners learn front-end development. Built using HTML, CSS, and JavaScript, 
+                        it features a dynamic quiz, a random quote generator, and a resources hub with tutorials and templates.</p>
+                    <a href="https://codewithgabby.netlify.app/" class="block mt-4 text-blue-600 hover:underline" target="_blank">Check Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="p-8 bg-gray-100">
+        <h2 class="text-center text-2xl font-bold mb-6">Contact Me</h2>
+        <div class="text-center space-y-6">
+            <p>
+                <a href="mailto:johnfem4real@gmail.com" class="text-gray-700 hover:text-blue-600 transition text-lg flex items-center justify-center space-x-2">
+                    <i class="fas fa-envelope"></i> 
+                    <span>Email: johnfem4real@gmail.com</span>
+                </a>
+            </p>
+            <p>
+                <a href="https://www.linkedin.com/in/johnson-gabriel-b716aa212/" target="_blank" class="text-gray-700 hover:text-blue-600 transition text-lg flex items-center justify-center space-x-2">
+                    <i class="fab fa-linkedin"></i> 
+                    <span>LinkedIn: Johnson Gabriel</span>
+                </a>
+            </p>
+            <p>
+                <a href="https://www.tiktok.com/@codewithgabby" target="_blank" class="text-gray-700 hover:text-blue-600 transition text-lg flex items-center justify-center space-x-2">
+                    <i class="fab fa-tiktok"></i> 
+                    <span>TikTok: @codewithgabby</span>
+                </a>
+            </p>
+        </div>
+    </section>
+    
+
+    <footer class="text-center py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+        <p>&copy; 2025 Gabriel Johnson. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+
+        // Check for saved theme in localStorage and apply it
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark');
+            themeToggle.textContent = 'Light Theme';
+        } else {
+            themeToggle.textContent = 'Dark Theme';
+        }
+
+        // Add event listener to toggle the theme
+        themeToggle.addEventListener('click', () => {
+            const isDarkMode = document.body.classList.toggle('dark');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            themeToggle.textContent = isDarkMode ? 'Light Theme' : 'Dark Theme';
+        });
+    </script>
+
+</body>
+</html>
