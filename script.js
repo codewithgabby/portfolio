@@ -23,6 +23,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
+
+// toogle
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
 
@@ -43,3 +45,25 @@ themeToggle.addEventListener('click', () => {
     localStorage.setItem('theme', 'light');
   }
 });
+
+
+// backToTop
+const backToTopBtn = document.getElementById("backToTop");
+
+// Show the button when user scrolls down
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) { // Adjust this value as needed
+        backToTopBtn.classList.add("show");
+    } else {
+        backToTopBtn.classList.remove("show");
+    }
+});
+
+// Smooth Scroll to Top when clicked
+backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" />
   <!-- Link to external CSS stylesheet -->
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" as="style">
 </head>
 <body>
 
@@ -21,8 +22,9 @@
       <!-- Navigation Links (hidden on mobile, shown on desktop) -->
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
+        <li><a href="#skills">My Skills</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#hire-me">Let’s Work</a></li>
       </ul>
       <!-- dark theme-toggle -->
    <button class="theme-toggle" id="themeToggle">
@@ -41,7 +43,7 @@
       <div class="profile-content">
         <h1>Hello, I’m Johnson Gabriel</h1>
         <p>I’m a Front-End Developer based in Nigeria, creating interactive and responsive web experiences.</p>
-        <a href="#contact" class="btn contact-btn">Contact Me</a>
+        <a href="mailto:johnfem4real@gmail.com" target="_blank" class="btn contact-btn">Contact Me</a>
       </div>
       <!-- Profile Image -->
       <div class="profile-image">
@@ -91,67 +93,66 @@
         <!-- Project 1 -->
         <div class="project-item">
             <a href="https://gabbytraveltips.netlify.app/" target="_blank">
-          <img src="img/gabbytraveltips.png" alt="Screenshot of Project One" />
-          <h3>Project One</h3>
+          <img src="img/gabbytraveltips.png" alt="Screenshot of Project One" loading="lazy" />
+          <h3>Gabby Travel Tips</h3>
           <p>Gabby Travel Tips is your go-to resource for all things related to studying, visiting, and immigrating abroad. 
             Designed to simplify complex travel processes, this website provides clear, actionable tips, FAQs, and personalized consultation options 
             for prospective international students and visitors.</p>
+            <button class="view-project-btn">View Project</button>
             </a>
         </div>
 
         <!-- Project 2 -->
         <div class="project-item">
             <a href="https://ojamcycakes.netlify.app/" target="_blank">
-          <img src="img/hero cake.jpg" alt="Screenshot of Project Two" />
-          <h3>Project Two</h3>
+          <img src="img/hero cake.jpg" alt="Screenshot of Project Two" loading="lazy" />
+          <h3>Ojamcy Cakes</h3>
           <p>Ojamcy Cakes specializes in creating delicious and unique cakes for every occasion. Whether it's a birthday, 
             wedding, or corporate event, we provide custom cakes that are both beautiful and tasty.</p>
-            </a>
+            <button class="view-project-btn">View Project</button>
+        </a>
         </div>
 
         <!-- Project 3 -->
         <div class="project-item">
             <a href="https://codewithgabby.netlify.app/" target="_blank">
-          <img src="img/photo_2025-01-11_13-01-49.jpg" alt="Screenshot of Project Three" />
-          <h3>Project Three</h3>
+          <img src="img/photo_2025-01-11_13-01-49.jpg" alt="Screenshot of Project Three" loading="lazy"/>
+          <h3>Code with Gabby</h3>
           <p>CodeWithGabby is a platform designed to help beginners learn front-end development. Built using HTML, CSS, and JavaScript, 
                         it features a dynamic quiz, a random quote generator, and a resources hub with tutorials and templates.</p>
-            </a>
+                        <button class="view-project-btn">View Project</button>
+                    </a>
         </div>
 
          <!-- Project 4 -->
          <div class="project-item">
             <a href="https://codewithgabby.github.io/STUDY-GROUP-TRACKER/" target="_blank">
-          <img src="img/study-tracker.jpg" alt="Screenshot of Project Four" />
-          <h3>Project Four</h3>
+          <img src="img/study-tracker.jpg" alt="Screenshot of Project Four" loading="lazy"/>
+          <h3>Study Tracker</h3>
           <p>Study Tracker helps students keep track of their assignments deadlines, and study hours. Designed to improve time management,
             this tool aims to increase productivity and keep students on top of their academic work.</p>
-            </a>
+            <button class="view-project-btn">View Project</button>
+        </a>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-      <h2>Contact Me</h2>
-      <form action="#" class="contact-form">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" required />
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" class="btn submit-btn">Send Message</button>
-      </form>
-    </section>
-  </main>
+      <!-- Resume Section -->
+<section id="resume" class="resume-section">
+    <h2>Download My Resume</h2>
+    <p>Want to know more about my experience and skills? Download my resume below.</p>
+    <a href="docs/resume.pdf" download class="btn">Download PDF</a>
+</section>
 
+<!-- Hire Me Section -->
+<section id="hire-me" class="hire-me">
+    <h2>Let’s Work Together</h2>
+    <p>Need a skilled front-end developer for your team or next project? Let’s build something great together</p>
+    <a href="mailto:johnfem4real@gmail.com" target="_blank" class="btn">Hire Me</a>
+</section>
+  </main> 
+
+  
   <!-- Footer (with a small copyright note) -->
   <footer>
     
@@ -168,6 +169,12 @@
   </div>
     <p>© 2025 Johnson Gabriel All rights reserved.</p>
   </footer>
+
+  <!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top">
+    ↑
+</button>
+
 
   <!-- JavaScript file -->
   <script src="script.js"></script>

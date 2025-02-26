@@ -57,7 +57,11 @@
   }
   .nav-links {
     list-style: none;
+    background: transparent !important; /* Ensure transparency */
+    padding: 0;
+    margin: 0;
   }
+
   .nav-links li {
     display: inline-block;
     margin-left: 2rem;
@@ -65,17 +69,22 @@
   .nav-links li a {
     text-decoration: none;
     color: var(--text-color);
+    background: transparent !important; 
+    padding: 10px 15px; /* Better spacing */
+    border-radius: 5px; /* Optional */
     font-weight: bold;
-    
-    
   }
   .nav-links li a:hover {
     color: var(--primary-color);
   }
-  /* Language switch active link style (underline active language) */
-  .language-switch .active {
-    text-decoration: underline;
-  }
+
+  .dark-theme .nav-links {
+    background: transparent !important; /* Ensure transparency in dark mode */
+}
+
+.dark-theme .nav-links li a {
+    background: transparent !important;
+}
   
   /* Hamburger icon (mobile) */
   .nav-toggle {
@@ -103,6 +112,7 @@
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
   }
+
   /* "Contact Me" button in hero */
   .btn {
     text-decoration: none;
@@ -135,6 +145,7 @@
     position: relative;
     z-index: 1;  /* Put image above the decorative circle */
   }
+
   /* Purple gradient circle/blob behind the profile image */
   .hero-bg {
     position: absolute;
@@ -163,10 +174,10 @@
 /* Skills Grid Layout */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2rem;
     justify-items: center;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -187,9 +198,9 @@
 
 /* Skill Icons */
 .skill img {
-    width: 60px;
-    height: 60px;
     margin-bottom: 1rem;
+    width: 50px;
+    height: 50px;
 }
 
 /* Dark Mode Adjustments */
@@ -212,6 +223,7 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+
   /* Individual Project Card */
   .project-item {
     background: #fff;
@@ -219,6 +231,7 @@
     border-radius: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
   }
 
   .dark-theme .project-item {
@@ -227,16 +240,19 @@
 }
 
   .project-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
+
   .project-item img {
     width: 100%;
     border-radius: 5px;
   }
+
   .project-item h3 {
     margin: 1rem 0 0.5rem;
   }
+
   .project-item p {
     font-size: 1rem;
   }
@@ -255,54 +271,83 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-  
-  /* Contact Section */
-  .contact-section {
-    padding: 4rem 2rem;
+/* Add button styles */
+.view-project-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.view-project-btn:hover {
+    background: #7e0188;
+}
+
+/* Dark mode */
+.dark-theme .project-item {
+    background: var(--dark-card);
+    box-shadow: 0 4px 6px var(--dark-shadow);
+}
+
+/* Resume Section */
+.resume-section {
     text-align: center;
-  }
-  .contact-section h2 {
-    margin-bottom: 1.5rem;
-  }
-  .contact-form {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  .form-group {
+    padding: 4rem 2rem;
+    background: var(--light-color);
+}
+
+.resume-section p {
+    font-size: 1.1rem;
     margin-bottom: 1rem;
-  }
-  .form-group label {
-    display: block;
-    margin-bottom: 0.3rem;
-    font-weight: 500;
-  }
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font: inherit;            /* Inherit font-family from body (Montserrat) */
-  }
-  .form-group textarea {
-    resize: vertical;
-  }
-  .submit-btn {
+}
+
+.resume-section .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     background: var(--primary-color);
-    color: #fff;
-    border: none;
+    color: white;
+    font-weight: bold;
     border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
+    text-decoration: none;
     transition: background 0.3s;
-  }
-  .submit-btn:hover {
+}
+
+.resume-section .btn:hover {
     background: #7e0188;
-  }
-  
+}
+
+  /* Hire Me Section */
+.hire-me {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--bg-color);
+}
+
+.hire-me p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.hire-me .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.hire-me .btn:hover {
+    background: #7e0188;
+}
+
   /* Footer */
   footer {
     text-align: center;
@@ -332,12 +377,17 @@
   
   /* Dark mode toggle button */
   .theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--text-color);
     padding: 0.5rem;
-    margin-left: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
   }
+
+  .theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
   
   .theme-toggle svg {
     width: 24px;
@@ -350,10 +400,59 @@
     --text-color: var(--dark-text);
 }
 
+.dark-theme .theme-toggle {
+    border-color: var(--dark-text);
+}
+
+.dark-theme .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 .dark-theme {
     --bg-color: var(--dark-bg);
     --text-color: var(--dark-text);
 }
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Show button when scrolling */
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-10px);
+}
+
+/* Hover effect */
+.back-to-top:hover {
+    background: #7e0188;
+}
+
+/* Dark mode adjustment */
+.dark-theme .back-to-top {
+    background: var(--dark-card);
+    color: var(--dark-text);
+}
+
   
   /* Responsive Media Queries */
   /* Mobile (default) styles are above. Now define tablet/desktop adjustments */
@@ -413,4 +512,11 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
+
+  @media (max-width: 600px) {
+    .skill img {
+        width: 40px;
+        height: 40px;
+    }
+}
   
