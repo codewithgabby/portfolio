@@ -1,0 +1,522 @@
+/* Root CSS Variables for colors and other design constants */
+  :root {
+    --primary-color: #9A01A2; /* Purple accent */
+    --light-color: #DBC8DD; /* Light purple */
+    --bg-color: #E5E5E5; /* Light grey */
+    --text-color: #1A1A1A; /* Nearly black text */
+    
+    /* Dark Mode Variables */
+    --dark-bg: #121212; /* Dark background color */
+    --dark-text: #ffffff; /* Light text color */
+    --dark-card: #2d2d2d; /* Dark card background */
+    --dark-shadow: rgba(0, 0, 0, 0.3);
+}
+
+  
+  /* Global Reset/Basic Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;  /* Smooth scrolling for anchor links&#8203;:contentReference[oaicite:1]{index=1} */
+  }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* Typography tweaks */
+  h1, h2, h3, h4, p {
+    margin: 0 0 1rem 0;
+  }
+  h1 { font-size: 2.5rem; font-weight: 600; }
+  h2 { font-size: 2rem; font-weight: 600; margin-bottom: 1rem; }
+  h3 { font-size: 1.5rem; font-weight: 600; }
+  p  { font-size: 1rem; }
+  
+  /* Navigation Bar */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* Optional: background and shadow for nav (matches grey background, so shadow subtle) */
+    background: var(--bg-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .nav-links {
+    list-style: none;
+    background: transparent !important; /* Ensure transparency */
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links li {
+    display: inline-block;
+    margin-left: 2rem;
+  }
+  .nav-links li a {
+    text-decoration: none;
+    color: var(--text-color);
+    background: transparent !important; 
+    padding: 10px 15px; /* Better spacing */
+    border-radius: 5px; /* Optional */
+    font-weight: bold;
+  }
+  .nav-links li a:hover {
+    color: var(--primary-color);
+  }
+
+  .dark-theme .nav-links {
+    background: transparent !important; /* Ensure transparency in dark mode */
+}
+
+.dark-theme .nav-links li a {
+    background: transparent !important;
+}
+  
+  /* Hamburger icon (mobile) */
+  .nav-toggle {
+    display: none;               /* Hidden on desktop, shown on mobile via media query */
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Profile (Hero) Section */
+  .profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+    position: relative;
+    text-align: center;          /* Center text on small screens */
+  }
+  .profile-content {
+    max-width: 600px;
+  }
+  .profile-content h1 {
+    margin-bottom: 1rem;
+  }
+  .profile-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  /* "Contact Me" button in hero */
+  .btn {
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+  .contact-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 5px;
+    transition: background 0.3s;
+    margin-bottom: 20px;
+  }
+  .contact-btn:hover {
+    background: #7e0188;  /* slightly darker purple on hover */
+  }
+  
+  /* Profile image and decorative background */
+  .profile-image {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .profile-image img {
+    width: 100%;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;  /* Put image above the decorative circle */
+  }
+
+  /* Purple gradient circle/blob behind the profile image */
+  .hero-bg {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle at 50% 50%, var(--light-color), var(--primary-color));
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  /* Skills Section */
+.skills-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--bg-color);
+}
+
+.skills-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+/* Skills Grid Layout */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Skill Cards */
+.skill {
+    background: var(--card-bg, #fff);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Skill Icons */
+.skill img {
+    margin-bottom: 1rem;
+    width: 50px;
+    height: 50px;
+}
+
+/* Dark Mode Adjustments */
+.dark-theme .skill {
+    background: var(--dark-card);
+    box-shadow: 0 4px 6px var(--dark-shadow);
+}
+
+  
+  /* Projects Section */
+  .projects-section {
+    padding: 4rem 2rem;
+  }
+  .projects-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Individual Project Card */
+  .project-item {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .dark-theme .project-item {
+    background: var(--dark-card);
+    box-shadow: 0 4px 6px var(--dark-shadow);
+}
+
+  .project-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .project-item img {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .project-item h3 {
+    margin: 1rem 0 0.5rem;
+  }
+
+  .project-item p {
+    font-size: 1rem;
+  }
+
+  .project-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit; /* Keep the text color unchanged */
+    padding: 1rem;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-item a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Add button styles */
+.view-project-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.view-project-btn:hover {
+    background: #7e0188;
+}
+
+/* Dark mode */
+.dark-theme .project-item {
+    background: var(--dark-card);
+    box-shadow: 0 4px 6px var(--dark-shadow);
+}
+
+/* Resume Section */
+.resume-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--light-color);
+}
+
+.resume-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.resume-section .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.resume-section .btn:hover {
+    background: #7e0188;
+}
+
+  /* Hire Me Section */
+.hire-me {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--bg-color);
+}
+
+.hire-me p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.hire-me .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.hire-me .btn:hover {
+    background: #7e0188;
+}
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* Social icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .social-icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-color);
+    transition: fill 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    fill: var(--primary-color);
+  }
+  
+  /* Dark mode toggle button */
+  .theme-toggle {
+    background: transparent;
+    border: 1px solid var(--text-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+  
+  .theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-color);
+  }
+
+  .theme-toggle {
+    --bg-color: var(--dark-bg);
+    --text-color: var(--dark-text);
+}
+
+.dark-theme .theme-toggle {
+    border-color: var(--dark-text);
+}
+
+.dark-theme .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme {
+    --bg-color: var(--dark-bg);
+    --text-color: var(--dark-text);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Show button when scrolling */
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-10px);
+}
+
+/* Hover effect */
+.back-to-top:hover {
+    background: #7e0188;
+}
+
+/* Dark mode adjustment */
+.dark-theme .back-to-top {
+    background: var(--dark-card);
+    color: var(--dark-text);
+}
+
+  
+  /* Responsive Media Queries */
+  /* Mobile (default) styles are above. Now define tablet/desktop adjustments */
+  @media (max-width: 767px) {
+    /* Mobile menu: hide nav links by default, show on toggle */
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 1rem;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      /* Optional: small drop shadow for the dropdown */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .nav-links li {
+      display: block;
+      margin: 0;
+    }
+    .nav-links li a {
+      display: block;
+      padding: 0.75rem 1.5rem;
+    }
+    .nav-links.open {
+      display: block;  /* Show menu when .open class is added via JS */
+    }
+    .nav-toggle {
+      display: block;  /* Show hamburger icon on mobile */
+    }
+    .profile-section { text-align: center; }  /* Center text on mobile */
+  }
+  
+  @media (min-width: 768px) {
+    /* Desktop/Nav styles */
+    .nav-toggle { display: none; }    /* Hide hamburger on desktop */
+    .nav-links { display: block; }    /* Always show nav menu on desktop */
+    .nav-links li { margin-left: 1.5rem; } /* Adjust spacing between menu items */
+    .profile-section {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+    }
+    .profile-image {
+      margin-top: 0;
+      margin-left: 2rem;
+      max-width: 350px;
+    }
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .skill img {
+        width: 40px;
+        height: 40px;
+    }
+}
+  
